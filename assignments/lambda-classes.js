@@ -84,6 +84,36 @@ const stephen = new Student( {
     previousBackground: 'Musician'
 });
 
+
+class ProjectManager extends Instructor {
+    constructor(personAttributes) {
+        super(personAttributes);
+      this.gradClassName = personAttributes.gradClassName;
+      this.favInstructor = personAttributes.favInstructor;
+    };
+
+    standUp(channel) {
+        return `${this.name} announces to ${channel} "@channel standy times!"`
+          };
+
+    debugsCode(student, subject) {
+    return `${this.name} debugs ${student.name}'s code on ` + subject;
+        };
+}
+
+const irving = new ProjectManager( {
+    name: 'Irving',
+    age: 29, //I dunno.
+    location: 'Dominican Republic',
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `I'll be honest...`,
+    gradClassName: "WEB20",
+    favInstructor: 'Dan'
+});
+
+
+
 //Need to test Instructor's grade() method.
 console.log(fred.grade(stephen, 'JavaScript'))
 
@@ -95,3 +125,8 @@ console.log(stephen.listsSubjects());
 console.log(stephen.PRAssignment('JavaScript'));
 
 console.log(stephen.sprintChallenge('JavaScript'));
+
+
+console.log(irving.debugsCode(stephen, 'Javascript'));
+
+console.log(irving.standUp("WEBPT8_IRVING"));
